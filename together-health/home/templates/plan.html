@@ -34,11 +34,14 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope = "col">Name</th>
-                        <th scope = "col">Buy/Sell</th>
-                        <th scope = "col">Purchase/Sale Price </th>
-                        <th scope = "col"># of Shares Bought/Sold</th>
-                        <th scope = "col">Time</th>
+                        <th scope = "col">Plan ID</th>
+                        <th scope = "col">Out of Area</th>
+                        <th scope = "col">Tobacco</th>
+                        <th scope = "col">Pre-Existing Condition</th>
+                        <th scope = "col">Dental</th>
+                        <th scope = "col">Copay</th>
+                        <th scope = "col">Married</th>
+                        <th scope = "col">Dependent</th>
                     </tr>
                 </thead>
                     <tbody>
@@ -49,6 +52,9 @@
                             <td>{{ plan.tobacco }}</td>
                             <td>{{ plan.disease }}</td>
                             <td>{{ plan.time  }}</td> 
+                            <td>{{ plan.out_of_area }}</td>
+                            <td>{{ plan.tobacco }}</td>
+                            <td>{{ plan.disease }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
