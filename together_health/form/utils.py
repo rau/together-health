@@ -1,3 +1,4 @@
+from flask import session
 import sqlite3
 
 def submit_form(request):
@@ -8,27 +9,26 @@ def submit_form(request):
     dental = True if request.form.get('dental') == 'on' else False
     copay = request.form.get('copay')
     dependents = request.form.get('dependents')
-    premium = request.form.get('premium')
-
+    prem = request.form.get('prem')
+    print('askdjaslkdja')
+    print(prem)
     db_connect = sqlite3.connect("together_health.db")
     db_connect.row_factory = sqlite3.Row
     db = db_connect.cursor()
 
     db.execute(
                 '''
-                INSERT INTO preferences (
-                    married,
-                    dependents,
-                    smoke,
-                    preexisting,
-                    dental,
-                    travel,
-                    monthly_budget_high,
-                    copay_high
-                )
-                VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?);
-                ''', (married, dependents, smoke, condition, dental, service, premium, copay)
+                UPDATE preferences SET
+                    married = ?,
+                    dependents = ?,
+                    tobacco = ?,
+                    preexisting = ?,
+                    dental = ?,
+                    travel = ?,
+                    monthly_budget_high = ?,
+                    copay_high = ?
+                 WHERE user_id = ?;
+                ''', (married, dependents, smoke, condition, dental, service, request.form.get('prem'), copay, session['user_id'])
             )
 
-    db.commit()
+    db_connect.commit()
