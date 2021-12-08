@@ -10,7 +10,7 @@
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
         <link href="/static/favicon.ico" rel="icon">
         <link href="../../static/css/main.css" rel="stylesheet">
-        <title>TogetherHealth Login</title>
+        <title>TogetherHealth Plan</title>
     </head>
     <body>
         <ul>
@@ -19,23 +19,41 @@
             <li><a href="about.html">About</a></li>
             <li><a href="form.html">My Form</a></li>
             <li><a href="plan.html">My Plan</a></li>
+            <li><a href="">Logout</a></li>
             {% else %}
             <li><a href="index.html">TogetherHealth</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             {% endif %}
-            </ul>
+        </ul>
         <div class="section">
-            <form action="/login" method="post">
-                <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
-                </div>
-                <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
-                </div>
-                <button class="btn btn-primary" type="submit">Login</button>
-            </form>
+            <h1>TogetherHealth</h1>
         </div>
-    </body>
+        <div class="section">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope = "col">Name</th>
+                        <th scope = "col">Buy/Sell</th>
+                        <th scope = "col">Purchase/Sale Price </th>
+                        <th scope = "col"># of Shares Bought/Sold</th>
+                        <th scope = "col">Time</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for plan in plans %}
+                        <tr>
+                            <td>{{ plan.plan_id }}</td>
+                            <td>{{ plan.out_of_area }}</td>
+                            <td>{{ plan.tobacco }}</td>
+                            <td>{{ plan.disease }}</td>
+                            <td>{{ plan.time  }}</td> 
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </body>     
 </html>
