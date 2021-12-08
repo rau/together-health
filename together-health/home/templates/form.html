@@ -32,43 +32,35 @@
                 <h1>Form Submission</h1>
                 Are you married?
                 <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
-                </div>
-                Do you smoke?
-                <div class="mb-3">
-                    <label>
-                        Yes or no?
-                        <select>
-                          <option value="">---</option>
-                          <option value="">Yes</option>
-                          <option value="">No</option>
-                        </select>
-                      </label>
-                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
-                </div>
-                Do you need coverage out of the service area?
-                <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
-                </div>
-                Do you have a pre-existing condition?
-                <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
-                </div>
-                Do you need dental coverage?
-                <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
-                </div>
-                What is the maximum copay you would like your plan to have?
-                <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="married" name="married" placeholder="Yes or No" type="text">
                 </div>
                 How many dependents do you have?
                 <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                    <input class="form-control mx-auto w-auto" id="dependents" name="dependents" placeholder="Integer Value" type="dependents" minlength="8">
+                </div>
+                Do you smoke?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="smoke" name="smoke" placeholder="Yes or No" type="smoke" minlength="8">
+                </div>
+                Do you have a pre-existing condition?
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="disease" name="disease" placeholder="Yes or No" type="text">
+                </div>
+                Do you need dental coverage?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="dental" name="dental" placeholder="Yes or No" type="dental" minlength="8">
+                </div>
+                Do you need coverage out of the service area?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="travel" name="travel" placeholder="Yes or No" type="travel" minlength="8">
                 </div>
                 What is the maximum monthly insurance premium you would like your plan to have?
                 <div class="mb-3">
-                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                    <input class="form-control mx-auto w-auto" id="monthly_budget_high" name="monthly_budget_high" placeholder="Integer Value" type="monthly_budget_high" minlength="8">
+                </div>
+                What is the maximum copay you would like your plan to have?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="copay" name="copay" placeholder="Integer Value" type="copay" minlength="8">
                 </div>
                 <button class="btn btn-primary" type="submit">Submit Form</button>
             </form>
