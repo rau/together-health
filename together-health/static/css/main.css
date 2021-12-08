@@ -1,0 +1,97 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.header {
+    background-color: #DC143C;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.section {
+    padding: 0.5rem 2rem 1rem 2rem;
+    text-align: center;
+}
+.section:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+body {
+    background-color: #FFF;
+    color: #212529;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+    text-decoration: none;
+    color: white;
+}
+h1{
+    font-family: Canela Deck Web;
+    font-size: 56px;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -.1px;
+}
+h2{
+    font-family: Canela Deck Web;
+    text-align: center;
+}
+h3{
+    font-family: Canela Deck Web;
+    text-align: center;
+}
+h4{
+    font-family: Canela Deck Web;
+    text-align: center;
+}
+p{
+    font-family: Canela Deck Web;
+}
+button, input[type="submit"] {
+    background-color: #424242;
+    color: #FFF;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
+input[type="text"] {
+    line-height: 1.8;
+    width: 25%;
+}
+input[type="text"]:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}

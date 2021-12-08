@@ -46,3 +46,4 @@ def register_blueprints(app):
     app.register_blueprint(form.form_bp)
     app.register_blueprint(home.home_bp)
     app.register_blueprint(admin.admin_bp)
+
