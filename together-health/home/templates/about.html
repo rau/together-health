@@ -10,20 +10,21 @@
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
         <link href="/static/favicon.ico" rel="icon">
         <link href="../../static/css/main.css" rel="stylesheet">
-        <title>TogetherHealth Homepage</title>
+        <title>TogetherHealth About</title>
     </head>
     <body>
         <ul>
             {% if session["user_id"] %}
             <li><a href="index.html">TogetherHealth</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="form.html">My Form</a></li>
+            <li><a href="plan.html">My Plan</a></li>
+            <li><a href="">Logout</a></li>
             {% else %}
             <li><a href="index.html">TogetherHealth</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="about.html">My Form</a></li>
-            <li><a href="about.html">My Plan</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
             {% endif %}
         </ul>
         <div class="container">
@@ -33,6 +34,41 @@
                 <div class="section">
                 <h2>Who are we?</h2>
             </div>
+        </div>
+        <div class="col-xl-5 col-l4 col-m12 col-sm12 col-xs12 mb-5">
+            <div class="bg-light rounded shadow-sm py-5 px-4"><img src="{{ url_for('static', filename='img/sumanth-headshot.jpg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Raunak Daga</h5>
+              <span class="small">Co-Founder</span> </br>
+              <span class="small text-justify text-muted">Raunak is a freshman at Harvard University. He worked on the technical side of eAbsentee, helping groups understand voter trends and visualize data. In past summers, he's interned at George Mason University. He enjoys listening to Mac Miller, playing basketball, and reading in his free time.</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="mailto:rdaga@college.harvard.edu" class="social-link"><i class="fa fa-envelope"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/gods/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-xl-5 col-l4 col-m12 col-sm12 col-xs12 mb-5">
+            <div class="bg-light rounded shadow-sm py-5 px-4"><img src="{{ url_for('static', filename='img/james-headshot.jpg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Saketh Mynampati</h5>
+              <span class="small">Co-Founder</span> <br />
+              <span class="small text-muted">Saketh is a freshman at Harvard University. He develops software in Datamatch matching people based on their preferences. In his free time he enjoys computer programming, playing volleyball, and playing piano.</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="sbmynampati@college.harvard.edu" class="social-link"><i class="fa fa-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="col-xl-5 col-l4 col-m12 col-sm12 col-xs12 mb-5">
+            <div class="bg-light rounded shadow-sm py-5 px-4"><img src="{{ url_for('static', filename='img/robert-headshot.jpg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Khoi Nguyen</h5>
+              <span class="small">Co-Founder</span> <br />
+              <span class="small text-muted">Khoi is a freshman at Harvard University. He has founded an internationally recognized charitable organization and developed machine learning software at George Mason University. He is an avid semi-professional video gamer and works out in his free time.</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="khoinguyen@college.harvard.edu" class="social-link"><i class="fa fa-envelope"></i></a></li>
+                <li class="list-inline-item"><a href="www.linkedin.com/in/ngu-khoi/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
     </body>
 </html>
