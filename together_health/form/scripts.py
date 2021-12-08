@@ -3,6 +3,10 @@
 
 from sqlite3 import *
 
+def table_setup(db):
+    create_plans_table(db)
+    create_users_table(db)
+    create_users_pref_table(db)
 # This table is updated upon registration and queried upon login.
 def create_users_table(db):
 
@@ -35,9 +39,8 @@ def create_plans_table(db):
                 );
                 '''
             ).fetchall()
-
-    if len(x) == 0:
-        populate_plans_table(db)
+    # ONLY RUN ONCE, IN CASE THE SAMPLE DATA IS LOST!
+    populate_plans_table(db)
 
 def populate_plans_table(db):
 

@@ -18,8 +18,22 @@ form_bp = Blueprint(
     static_folder='static'
 )
 
+
+
+
 @form_bp.route('/admin/')
 def index():
+    db_connect = sqlite3.connect("together_health.db")
+    db_connect.row_factory = sqlite3.Row
+    db = db_connect.cursor()
+
+
+    # We commented this out after running it once. You can think of it as our utility script to actually create the tables for the db. The tables now exist in the DB after one run, and therefore have no need to be recreated.
+    # Also, most people will never visit /admin/ - it's almost like an easter egg.
+    # table_setup(db)
+
+    db_connect.commit()
+
     return render_template('admin.html')
 
 @form_bp.route('/form/', methods=["GET", "POST"])
@@ -32,26 +46,27 @@ def form():
         db_connect = sqlite3.connect("together_health.db")
         db_connect.row_factory = sqlite3.Row
         db = db_connect.cursor()
-        x = create_users_table(db)
-        print(x)
-        create_plans_table(db)
-        create_users_pref_table(db)
-        db_connect.commit()
         return render_template('form.html')
+
+@form_bp.route('/plan/')
+def plan():
+    db_connect = sqlite3.connect("together_health.db")
+    db_connect.row_factory = sqlite3.Row
+    db = db_connect.cursor()
+    plans = get_plans(db)
+    return render_template('plan.html', plans=plans)
 
 
 # This function gets the plans that are most applicable to the user via an algorithm that reduces the patient's data into three dimensions. It tries to match the expectation for copay, monthly rate, and desired services.
-def get_plans():
+def get_plans(db):
     # We used this to create dummy data. If the dummy data is lost, then you can uncomment these functions and re run them. We don't need them anymore so we have them commented out.
     # create_plans_table(db)
     # create_users_pref_table(db)
+    # db_connect.commit()
 
-    db_connect.commit()
+    preference = db.execute("SELECT * FROM preferences WHERE user_id = ?", [session["user_id"]]).fetchone()
 
-    preference = load_user_preferences(db)[0]
-    print(dict(zip(preference.keys(), [i for i in preference])))
-    print("")
-    print(rank_plans(preference, plans))
+    return (rank_plans(preference, db.execute("SELECT * FROM plans;").fetchall()))
 
 # Given a preference set and a healthcare plan, determines the match between them. This will be a value from 1 to the square root of 6 (at max)
 
