@@ -104,6 +104,8 @@ CREATE TABLE preferences (
 )
 ```
 
+NOTE: We had trouble finding where we could put the populate data function, so we put it in a hidden link and commented out. In form.py, the index() function has the table_setup function which is commented out. If the data is lost, this function can repopulate the tables.
+
 ### The Algorithm (Saketh)
 
 The algorithm essentially decomposes the users' data into 3 axes; their needs for copay (which is a function of their expected risk), the risk taken by the insurance carrier (some people may need a dental plan, or coverage for other conditions like diseases or smoking), and the monthly premium (affordability). It maps the data into a space, where it then calculates the length of three normalized vecotrs and sums them; the norm of this vecotr is the"distance" between a patient and a plan; the smaller this distance, the better.
