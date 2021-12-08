@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% block content %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -10,35 +10,69 @@
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
         <link href="/static/favicon.ico" rel="icon">
         <link href="../../static/css/main.css" rel="stylesheet">
-        <title>TogetherHealth Homepage</title>
+        <title>TogetherHealth Form</title>
     </head>
     <body>
         <ul>
             {% if session["user_id"] %}
             <li><a href="index.html">TogetherHealth</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="form.html">My Form</a></li>
+            <li><a href="plan.html">My Plan</a></li>
+            <li><a href="">Logout</a></li>
             {% else %}
             <li><a href="index.html">TogetherHealth</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="about.html">My Form</a></li>
-            <li><a href="about.html">My Plan</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
             {% endif %}
-            </ul>
+        </ul>
         <div class="section">
-            <form action="/login" method="post">
+            <form action="/form" method="post">
+                <h1>Form Submission</h1>
+                Are you married?
                 <div class="mb-3">
-                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
                 </div>
+                Do you smoke?
                 <div class="mb-3">
+                    <label>
+                        Yes or no?
+                        <select>
+                          <option value="">---</option>
+                          <option value="">Yes</option>
+                          <option value="">No</option>
+                        </select>
+                      </label>
                     <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
                 </div>
+                Do you need coverage out of the service area?
                 <div class="mb-3">
                     <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
                 </div>
-                <button class="btn btn-primary" type="submit">Register</button>
+                Do you have a pre-existing condition?
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
+                </div>
+                Do you need dental coverage?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
+                </div>
+                What is the maximum copay you would like your plan to have?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                </div>
+                How many dependents do you have?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                </div>
+                What is the maximum monthly insurance premium you would like your plan to have?
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" minlength="8">
+                </div>
+                <button class="btn btn-primary" type="submit">Submit Form</button>
             </form>
         </div>
     </body>
 </html>
+{% endblock %}
