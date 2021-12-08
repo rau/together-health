@@ -18,6 +18,8 @@ We wanted the website to be concise in its function. We have a home page, which 
 
 ### Website Architecture (Raunak)
 
+
+
 Blueprints and Flask
 
 ### The Login/Register Pages (Raunak and Saketh)
