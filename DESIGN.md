@@ -6,10 +6,7 @@ A “design document” for your project in the form of a Markdown file called D
 
 ## Purpose
 
-The overarching purpose of our website is to allow users to register and login an account which allows them to submit information forms about themselves. First, we have three databases involved in our project. 
-
-
-One table consists of id, name, username, and a password. Another table consists of a plan_id, out_of_area boolean, tobacco boolean, disease boolean, dental boolean, copay integer, individual integer, couple integer, and dependent integer. A plan_id refers to a unique identifier for an insurance plan. out_of_area refers to whether or not the individual is outside the coverage area of the insurance plan. tobacco boolean refers to whether or not an individual would be covered while smoking. disease boolean refers to the user's status of pre-existing conditions. dental boolean refers to whether or not an individual would be covered with dental. copay refers to the amount of copay related to the plan. individual refers to . couple refers to . dependent refers to 
+The overarching purpose of our website is to allow users to register and login an account which allows them to submit information forms about themselves. First, we have three databases involved in our project.
 
 ## Objectives:
 
