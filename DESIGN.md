@@ -1,10 +1,15 @@
+c1ecfd
+
 A “design document” for your project in the form of a Markdown file called DESIGN.md that discusses, technically, how you implemented your project and why you made the design decisions you did. Your design document should be at least several paragraphs in length. Whereas your documentation is meant to be a user’s manual, consider your design document your opportunity to give the staff a technical tour of your project underneath its hood.
 
 # TogetherHealth
 
 ## Purpose
 
-The overarching purpose of our website is to allow users to register and login an account which allows them to submit information forms about themselves. First, we have three databases involved in our project. One table consists of id, name, username, and a password. Another table consists of a plan_id, out_of_area boolean, tobacco boolean, disease boolean, dental boolean, copay integer, individual integer, couple interger, and dependent integer. A plan_id refers to a unique identifier for an insurance plan. out_of_area refers to whether or not the individual is within the coverage area of the insurance plan. tobacco boolean refers to whether or not an individual would be corried
+The overarching purpose of our website is to allow users to register and login an account which allows them to submit information forms about themselves. First, we have three databases involved in our project. 
+
+
+One table consists of id, name, username, and a password. Another table consists of a plan_id, out_of_area boolean, tobacco boolean, disease boolean, dental boolean, copay integer, individual integer, couple integer, and dependent integer. A plan_id refers to a unique identifier for an insurance plan. out_of_area refers to whether or not the individual is outside the coverage area of the insurance plan. tobacco boolean refers to whether or not an individual would be covered while smoking. disease boolean refers to the user's status of pre-existing conditions. dental boolean refers to whether or not an individual would be covered with dental. copay refers to the amount of copay related to the plan. individual refers to . couple refers to . dependent refers to 
 
 ## Objectives:
 
@@ -21,11 +26,21 @@ These objectives
 Blueprints and Flask
 
 ### The Login/Register Pages (Raunak and Saketh)
+The database primarily involved with the login/registration functionality of the website is as follows
+```
+CREATE TABLE transactions (
+    "id" INTEGER UNIQUE PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "username" INTEGER NOT NULL,
+    "password_hash" TEXT NOT NULL,
+);
+```
+During registration, the user is prompted to enter a name, username, and a password. When the registration is submitted, a SQL query is made and we verify if the account does not exist, the password is valid, and username is unique. We would store a unique user_id for the user, the submitted name, the submitted username, and the submitted password stored after being hashed.
 
+During login, a SQL query is made to verify if the username and password matches any existing profile, and then allows the user to login.
 
-
-### The Plan Form (Khoi)
-
+### The Information Form Submission (Khoi)
+The form submission page prompts the user several questions which would be recorded and stored into the database. Particularly, there are five questions asking the user to prompt a certain boolean condition. Additionally, there are three more questions prompting the user for an integer input. Implemented are type-value errors. This information is then passed onto the database and stored as appropriate to the user_id.
 
 
 ### Letting Users See Their Matches (Khoi)
