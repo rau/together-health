@@ -21,7 +21,7 @@ We wanted the website to be concise in its function. We have a home page, which 
 Blueprints and Flask
 
 ### The Login/Register Pages (Raunak and Saketh)
-The database primarily involved with the login/registration functionality of the website is as follows
+The schema of the database primarily involved with the login/registration functionality of the website is as follows
 ```
 CREATE TABLE transactions (
     "id" INTEGER UNIQUE PRIMARY KEY,
@@ -35,7 +35,7 @@ During registration, the user is prompted to enter a name, username, and a passw
 During login, a SQL query is made to verify if the username and password matches any existing profile, and then allows the user to login.
 
 ### The Information Form Submission (Khoi)
-The form submission page prompts the user several questions which would be recorded and stored into the database. Particularly, there are five questions asking the user to prompt a certain boolean condition. Additionally, there are three more questions prompting the user for an integer input. This information is then passed onto the database and stored as appropriate to the user_id as well as calls the algorithm (see below for algorithm documentation). The SQL query is made to the following table
+The form submission page prompts the user several questions which would be recorded and stored into the database. Particularly, there are five questions asking the user to prompt a certain boolean condition. Additionally, there are three more questions prompting the user for an integer input. This information is then passed onto the database and stored as appropriate to the user_id as well as calls the algorithm (see below for algorithm documentation). The SQL query is made to the following schema
 ```
 CREATE TABLE preferences (
     "user_id" INTEGER UNIQUE PRIMARY KEY,
@@ -52,7 +52,7 @@ CREATE TABLE preferences (
 user_id refers to the particular user submitting the form. married refers to the married status of the user. dependents refers to the number of dependents of the user. tobacco refers to whether or not the user smokes. preexisting refers to the pre-existing conditions status of the user. dental refers to if the user wants dental coverage. travel refers to if the user wants out of area coverage. monthly_budget_high refers to the maximum value per month the user would like to spend on the health insurance premium. copay_high refers to the highest value the user would like to spend on the copay.
 
 ### Letting Users See Their Matches (Khoi)
-Users can see the list of matching plans on the plans page. Here, the algorithm recommends the best plans and the page queries for the plans and their attributes. We then list the plans and plans' attribute information into a table. The plans database is described by the following table
+Users can see the list of matching plans on the plans page. Here, the algorithm recommends the best plans and the page queries for the plans and their attributes. We then list the plans and plans' attribute information into a table. The schema of the plans database is described by the following table
 ```
 CREATE TABLE plans (
     "plan_id" INTEGER UNIQUE PRIMARY KEY,
