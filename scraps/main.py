@@ -2,7 +2,7 @@ from utils.manage_tables import *
 from utils.scoring import *
 import sqlite3
 
-db_connect = sqlite3.connect("/Users/sbmynam/Documents/CS50/scraps/data/together-health.db")
+db_connect = sqlite3.connect("/Users/sbmynam/Documents/CS50/together-health/scraps/data/together-health.db")
 
 db_connect.row_factory = sqlite3.Row
 

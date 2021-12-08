@@ -22,4 +22,6 @@ def score(preferences, plan):
 # Returns the 5 most applicable plans!
 def rank_plans(preferences, plans):
     plans.sort(key=lambda x: score(preferences, x))
-    return plans[:min(5, len(plans))]
+
+    top_plans = plans[:min(5, len(plans))]
+    return [dict(zip(x.keys(), [i for i in x])) for x in top_plans]
