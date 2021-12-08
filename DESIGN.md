@@ -68,7 +68,7 @@ CREATE TABLE plans (
     "dependent" INTEGER NOT NULL
 )
 ```
-plan_id refers to a particular plan. out_of_area refers to if the plan offers out of area coverage. tobacco refers to if the plan covers smokers. disease refers to if the plan covers users with pre-existing conditions. dental refers to if dental coverage is offered. copay refers the cost of the copay with the health insurance plan. individual refers to . couple refers to . dependent refers to the number of dependents the health insurance is going to cover.
+plan_id refers to a particular plan. out_of_area refers to if the plan offers out of area coverage. tobacco refers to if the plan covers smokers. disease refers to if the plan covers users with pre-existing conditions. dental refers to if dental coverage is offered. copay refers the cost of the copay with the health insurance plan. individual refers to the base rate for an unmarried individual under the given plan. couple refers to the abse rate for a couple under a given insurance plan. dependent refers cost per dependent added to the plan. These aspects are all essential to the pricing and function of health insurance plans.
 
 ### The Sample Data (Saketh and Khoi)
 
