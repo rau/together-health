@@ -4,12 +4,10 @@ import sqlite3
 import math
 from flask import Blueprint
 from flask import render_template, send_file, make_response
-from flask import current_app, request
+from flask import current_app, request, session
 from together_health.form.utils import submit_form
+from together_health.form.scripts import *
 
-db_connect = sqlite3.connect("together_health.db")
-db_connect.row_factory = sqlite3.Row
-db = db_connect.cursor()
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 
@@ -27,9 +25,18 @@ def index():
 @form_bp.route('/form/', methods=["GET", "POST"])
 def form():
     if request.method == 'POST':
+        print(session['user_id'])
         submit_form(request)
         return render_template('form.html')
     if request.method == 'GET':
+        db_connect = sqlite3.connect("together_health.db")
+        db_connect.row_factory = sqlite3.Row
+        db = db_connect.cursor()
+        x = create_users_table(db)
+        print(x)
+        create_plans_table(db)
+        create_users_pref_table(db)
+        db_connect.commit()
         return render_template('form.html')
 
 
