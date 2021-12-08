@@ -23,10 +23,10 @@ Blueprints and Flask
 ### The Login/Register Pages (Raunak and Saketh)
 The schema of the database primarily involved with the login/registration functionality of the website is as follows
 ```
-CREATE TABLE transactions (
+CREATE TABLE users (
     "id" INTEGER UNIQUE PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "username" INTEGER NOT NULL,
+    "username" TEXT NOT NULL,
     "password_hash" TEXT NOT NULL,
 );
 ```
