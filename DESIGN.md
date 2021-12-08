@@ -10,9 +10,11 @@ These objectives
 
 - Let users register and login to the site.
 - Allow them to specify their healthcare needs.
-- Recommend and show them plans  that most closely align with their needs.
+- Recommend and show them plans that most closely align with their needs.
 
 ## Design Considerations:
+
+We wanted the website to be concise in its function. We have a home page, which contains a FAQ section. We have an about us section describing the background and interests of the founders and developers of the website. We have login and registration pages for users to create the accounts. However, the service is largely provided through the form submission and the plan page which is where the user submits his information and receives an appropriate health insurance plan according to our website.
 
 ### Website Architecture (Raunak)
 
