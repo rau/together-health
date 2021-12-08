@@ -15,16 +15,16 @@
     <body>
         <ul>
             {% if session["user_id"] %}
-            <li><a href="index.html">TogetherHealth</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="form.html">My Form</a></li>
-            <li><a href="plan.html">My Plan</a></li>
+            <li><a href="/">TogetherHealth</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/form">My Form</a></li>
+            <li><a href="/plan">My Plan</a></li>
             <li><a href="">Logout</a></li>
             {% else %}
-            <li><a href="index.html">TogetherHealth</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="/">TogetherHealth</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
             {% endif %}
         </ul>
         <div class="section">
@@ -42,7 +42,7 @@
                     <div class="accordion-body">
                         This site works by taking in your information and using a novel algorithm in order to match you with an appropriate health insurance plan according to your needs and information.
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="accordion-item my-3 border-top rounded-top rounded-bottom">
                 <h3 class="accordion-header" id="dataHeading">
@@ -70,5 +70,5 @@
             </div>
         </div>
     </body>
-        
+
 </html>
